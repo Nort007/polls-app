@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ poll.title }} - Results</title>
+</head>
+<body>
+    <main class="text-center">
+        <h1>{{ poll.title }} - Results</h1>
+        <table class="table">
+            <tr>
+                <th>Question</th>
+                <th>Total Answered</th>
+                <th>Question Number</th>
+                <th>Choices</th>
+            </tr>
+            {% for question_stat in question_stats %}
+                <tr>
+                    <td>{{ question_stat.question }}</td>
+                    <td>{{ question_stat.total_answered }} #{{question_stat.rank}}</td>
+                    <td>{{ question_stat.number }}</td>
+                    <td>
+                        <ul>
+                            {% for choice_stat in question_stat.choices %}
+                                <li>{{ choice_stat.choice }} - {{ choice_stat.ratio }}</li>
+                            {% endfor %}
+                        </ul>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </main>
+    <script src="{% static 'js/bootstrap-styles.js' %}"></script>
+</body>
+</html>

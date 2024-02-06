@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+</head>
+<body>
+    <!-- <h1>User Registration</h1>
+    <form method="post" action="{% url 'account:signup' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Register</button>
+    </form> -->
+    <main>
+        <div class="vh-100">
+            <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+                <div class="container h-100">
+                    <div class="row d-flex justify-content-center align-items-center h-100">
+                        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                            <div class="card" style="border-radius: 15px;">
+                                <div class="card-body p-5">
+                                    <h2 class="text-uppercase text-center mb-5 d-flex justify-content-center">Sign Up</h2>
+                                    <form class="form-signup" method="POST" action="{% url 'account:signup' %}">
+                                        {% csrf_token %}
+                                        <div class=" mb-4 d-flex justify-content-center">
+                                            Username:
+                                        </div>
+                                        <div class="form-outline mb-4 d-flex justify-content-center">
+                                            {{ form.username }}
+                                        </div>
+                                        <div class=" mb-4 d-flex justify-content-center">
+                                            Email:
+                                        </div> 
+                                        <div class="form-outline mb-4 d-flex justify-content-center">
+                                            {{ form.email }}
+                                        </div>
+                                        <div class=" mb-4 d-flex justify-content-center">
+                                            Password:
+                                        </div>
+                                        <div class="form-outline mb-4 d-flex justify-content-center">
+                                            {{ form.password }}     
+                                        </div>
+                                        <div class=" mb-4 d-flex justify-content-center">
+                                            Confirm password:
+                                        </div>
+                                        <div class="form-outline mb-4 d-flex justify-content-center">
+                                            {{ form.confirm_password }}
+                                        </div>
+                                        <div class="d-flex justify-content-center">
+                                            <button type="submit" class="btn btn-primary btn-lg px-4 gap-3">Sign Up</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src={% static 'js/bootstrap-styles.js' %}></script>
+</body>
+</html>
